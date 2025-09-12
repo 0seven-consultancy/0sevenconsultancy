@@ -1053,27 +1053,35 @@
 <section id="contact" class="contact">
     <div class="container">
         <h2 class="section-title">Get In Touch</h2>
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" id="contactForm" method="POST" action="https://api.web3forms.com/submit">
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="bd0dc47c-c33e-4516-a79c-7c63a53b66fd">
+
             <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required>
             </div>
+
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" required>
             </div>
-            <div class="form-group">
+
+            <!-- <div class="form-group">
                 <label for="subject">Subject</label>
                 <input type="text" id="subject" name="subject" required>
-            </div>
+            </div> -->
+
             <div class="form-group">
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
+
             <button type="submit" class="submit-btn">Send Message</button>
         </form>
     </div>
 </section>
+
 
 <!-- Footer -->
 <footer>
@@ -1273,33 +1281,31 @@
 
         // Form validation and submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             // Get form elements
             const name = document.getElementById('name');
             const email = document.getElementById('email');
             const subject = document.getElementById('subject');
             const message = document.getElementById('message');
             const submitBtn = document.querySelector('.submit-btn');
-            
+
             // Basic validation
             if (!name.value.trim() || !email.value.trim() || !subject.value.trim() || !message.value.trim()) {
+                e.preventDefault();
                 alert('Please fill in all fields');
                 return;
             }
-            
+
             // Email validation
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(email.value)) {
+                e.preventDefault();
                 alert('Please enter a valid email address');
                 return;
             }
-            
-            // Simulate form submission
+
+            // Animate form submission (optional, but let the form submit)
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
-            
-            // Animate form submission
             gsap.to('.contact-form', {
                 scale: 0.95,
                 duration: 0.2,
@@ -1307,19 +1313,7 @@
                 repeat: 1,
                 ease: 'power2.inOut'
             });
-            
-            setTimeout(() => {
-                submitBtn.textContent = 'Message Sent!';
-                submitBtn.style.background = '#10b981';
-                
-                // Reset form after 2 seconds
-                setTimeout(() => {
-                    this.reset();
-                    submitBtn.textContent = 'Send Message';
-                    submitBtn.style.background = '';
-                    submitBtn.disabled = false;
-                }, 2000);
-            }, 1500);
+            // Do NOT preventDefault here, so the form submits to Web3Forms
         });
 
         // Input focus animations
