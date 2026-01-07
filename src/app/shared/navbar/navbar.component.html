@@ -11,10 +11,10 @@
     </button>
     
     <div class="navbar-menu" [class.active]="isMenuOpen">
-      <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-      <a routerLink="/services" routerLinkActive="active">Services</a>
-      <a routerLink="/about" routerLinkActive="active">About</a>
-      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Home</a>
+      <a routerLink="/services" routerLinkActive="active" (click)="closeMenu()">Services</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+      <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
     </div>
   </div>
 </nav>
