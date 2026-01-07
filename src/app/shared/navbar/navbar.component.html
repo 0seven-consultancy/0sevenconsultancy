@@ -1,0 +1,20 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-brand">
+      <a routerLink="/home">0Seven Management Services</a>
+    </div>
+    
+    <button class="navbar-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <div class="navbar-menu" [class.active]="isMenuOpen">
+      <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink="/services" routerLinkActive="active">Services</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </div>
+  </div>
+</nav>

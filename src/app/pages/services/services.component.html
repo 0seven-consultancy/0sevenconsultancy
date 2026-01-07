@@ -1,0 +1,109 @@
+<div class="services">
+  <div class="hero">
+    <div class="container">
+      <h1>Our Services</h1>
+      <p>Comprehensive management solutions tailored to your business needs. We provide cutting-edge technology solutions that drive efficiency, reduce costs, and accelerate growth across various industries.</p>
+    </div>
+  </div>
+
+  <div class="services-content">
+    <div class="container">
+      <div class="service-section" *ngFor="let service of services; let i = index">
+        <div class="service-header">
+          <div class="service-icon">{{ service.icon }}</div>
+          <div class="service-info">
+            <h2>{{ service.title }}</h2>
+            <p>{{ service.description }}</p>
+            <div class="service-meta">
+              <div class="pricing">
+                <strong>{{ service.pricing }}</strong>
+              </div>
+              <div class="industries">
+                <span class="industry-tag" *ngFor="let industry of service.industries">{{ industry }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="features-grid">
+          <div class="feature-card" *ngFor="let feature of service.features">
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+            <div class="benefits">
+              <h4>Key Benefits:</h4>
+              <ul>
+                <li *ngFor="let benefit of feature.benefits">{{ benefit }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="service-cta">
+          <a routerLink="/contact" class="btn btn-primary">Get Started with {{ service.title }}</a>
+          <a routerLink="/contact" class="btn btn-outline">Request Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional Services Section -->
+  <div class="additional-services">
+    <div class="container">
+      <h2>Additional Services</h2>
+      <p class="section-subtitle">We also provide comprehensive support services to ensure your success</p>
+      <div class="additional-grid">
+        <div class="additional-card" *ngFor="let service of additionalServices">
+          <div class="additional-icon">{{ service.icon }}</div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Process Section -->
+  <div class="process-section">
+    <div class="container">
+      <h2>Our Implementation Process</h2>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Consultation</h3>
+          <p>We analyze your business needs and recommend the best solution</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Customization</h3>
+          <p>We customize the system to match your specific requirements</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Implementation</h3>
+          <p>Our team handles the complete setup and data migration</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Training</h3>
+          <p>Comprehensive training for your team to ensure smooth adoption</p>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <h3>Support</h3>
+          <p>Ongoing 24/7 support to keep your business running smoothly</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="services-cta">
+    <div class="container">
+      <h2>Ready to Transform Your Business Operations?</h2>
+      <p>Contact us today for a free consultation and discover how our management solutions can revolutionize your business processes.</p>
+      <div class="cta-buttons">
+        <a routerLink="/contact" class="btn btn-primary">Get Free Consultation</a>
+        <a routerLink="/about" class="btn btn-secondary">Learn More About Us</a>
+      </div>
+    </div>
+  </div>
+</div>

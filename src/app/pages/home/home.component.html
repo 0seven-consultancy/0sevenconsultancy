@@ -1,0 +1,153 @@
+<div class="home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>0Seven Management Services</h1>
+        <p class="tagline">Smart Management Solutions for Modern Businesses</p>
+        <p class="description">
+          We provide cutting-edge management systems that streamline your business operations, 
+          increase efficiency, and drive growth. From retail to healthcare, we have the perfect solution for you.
+          Our innovative technology solutions are designed to meet the evolving needs of modern businesses.
+        </p>
+        <div class="hero-buttons">
+          <a routerLink="/services" class="btn btn-primary">Our Services</a>
+          <a routerLink="/contact" class="btn btn-secondary">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" *ngFor="let stat of stats">
+          <h3>{{ stat.number }}</h3>
+          <p>{{ stat.label }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-preview">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p class="section-subtitle">Comprehensive business management solutions tailored to your industry needs</p>
+      <div class="services-grid">
+        <div class="service-card" *ngFor="let service of services">
+          <div class="service-icon">{{ service.icon }}</div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <ul>
+            <li *ngFor="let feature of service.features">{{ feature }}</li>
+          </ul>
+          <a routerLink="/services" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose">
+    <div class="container">
+      <h2>Why Choose 0Seven Management Services?</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🚀</div>
+          <h3>Innovation First</h3>
+          <p>We leverage the latest technology to provide cutting-edge solutions that keep your business ahead of the competition.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure & Reliable</h3>
+          <p>Your data security is our priority. All our systems are built with enterprise-grade security and reliability standards.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📊</div>
+          <h3>Scalable Solutions</h3>
+          <p>Our solutions grow with your business, from small startups to large enterprises, ensuring long-term value.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">👥</div>
+          <h3>Expert Support</h3>
+          <p>Our dedicated support team is available 24/7 to ensure your business operations run smoothly without interruption.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+          <div class="testimonial-content">
+            <div class="stars">
+              <span *ngFor="let star of [1,2,3,4,5]" class="star">⭐</span>
+            </div>
+            <p>"{{ testimonial.message }}"</p>
+            <div class="testimonial-author">
+              <strong>{{ testimonial.name }}</strong>
+              <span>{{ testimonial.company }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries Section -->
+  <section class="industries">
+    <div class="container">
+      <h2>Industries We Serve</h2>
+      <div class="industries-grid">
+        <div class="industry-item">
+          <div class="industry-icon">🏢</div>
+          <h3>Retail & E-commerce</h3>
+          <p>Point-of-sale systems and inventory management for retail businesses</p>
+        </div>
+        <div class="industry-item">
+          <div class="industry-icon">🏥</div>
+          <h3>Healthcare</h3>
+          <p>Complete hospital and clinic management systems</p>
+        </div>
+        <div class="industry-item">
+          <div class="industry-icon">🏢</div>
+          <h3>Corporate</h3>
+          <p>Employee attendance and workforce management solutions</p>
+        </div>
+        <div class="industry-item">
+          <div class="industry-icon">🏭</div>
+          <h3>Manufacturing</h3>
+          <p>Production tracking and quality management systems</p>
+        </div>
+        <div class="industry-item">
+          <div class="industry-icon">🏦</div>
+          <h3>Financial Services</h3>
+          <p>Secure transaction processing and financial management</p>
+        </div>
+        <div class="industry-item">
+          <div class="industry-icon">🏫</div>
+          <h3>Education</h3>
+          <p>Student information systems and academic management</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Transform Your Business?</h2>
+      <p>Join hundreds of satisfied clients who have revolutionized their operations with our management solutions. 
+         Contact us today for a free consultation and discover how we can help your business grow.</p>
+      <div class="cta-buttons">
+        <a routerLink="/contact" class="btn btn-primary">Get Free Consultation</a>
+        <a routerLink="/services" class="btn btn-secondary">View All Services</a>
+      </div>
+    </div>
+  </section>
+</div>

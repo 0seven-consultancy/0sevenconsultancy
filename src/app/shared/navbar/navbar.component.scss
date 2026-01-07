@@ -1,0 +1,124 @@
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #e8ecef;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+  }
+  
+  .navbar-brand a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a202c;
+    text-decoration: none;
+    letter-spacing: -0.3px;
+    
+    &:hover {
+      color: #2563eb;
+    }
+  }
+  
+  .navbar-menu {
+    display: flex;
+    gap: 35px;
+    
+    a {
+      color: #4a5568;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        color: #2563eb;
+        background: #f7fafc;
+      }
+      
+      &.active {
+        color: #2563eb;
+        background: #eff6ff;
+        font-weight: 600;
+      }
+    }
+  }
+  
+  .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    
+    span {
+      width: 24px;
+      height: 2px;
+      background: #4a5568;
+      margin: 3px 0;
+      transition: 0.3s;
+      border-radius: 1px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    .container {
+      padding: 0 20px;
+      height: 65px;
+    }
+    
+    .navbar-brand a {
+      font-size: 1.4rem;
+    }
+    
+    .navbar-toggle {
+      display: flex;
+    }
+    
+    .navbar-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      flex-direction: column;
+      padding: 25px 20px;
+      gap: 0;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      border-top: 1px solid #e8ecef;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      
+      &.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      a {
+        padding: 12px 16px;
+        margin: 4px 0;
+        border-radius: 8px;
+        
+        &:hover {
+          background: #f7fafc;
+        }
+      }
+    }
+  }
+}

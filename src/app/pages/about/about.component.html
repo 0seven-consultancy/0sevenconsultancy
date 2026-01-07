@@ -1,0 +1,174 @@
+<div class="about">
+  <div class="hero">
+    <div class="container">
+      <h1>About 0Seven Management Services</h1>
+      <p>Empowering businesses with innovative management solutions since 2015</p>
+    </div>
+  </div>
+
+  <div class="about-content">
+    <div class="container">
+      <!-- Company Overview -->
+      <section class="overview">
+        <div class="content-grid">
+          <div class="text-content">
+            <h2>Company Overview</h2>
+            <p>
+              0Seven Management Services is a leading provider of comprehensive business management solutions. 
+              Founded in 2015 with the vision to simplify complex business operations, we specialize in developing 
+              and implementing cutting-edge management systems that drive efficiency and growth.
+            </p>
+            <p>
+              Our team of experienced professionals combines deep industry knowledge with innovative technology 
+              to deliver solutions that meet the unique needs of each client. From small businesses to large 
+              enterprises, we help organizations streamline their operations and achieve their goals.
+            </p>
+            <p>
+              With over 500 successful implementations across various industries, we have established ourselves 
+              as a trusted partner for businesses looking to modernize their operations and stay competitive 
+              in today's digital landscape.
+            </p>
+          </div>
+          <div class="image-placeholder">
+            <div class="placeholder-content">
+              <span>🏢</span>
+              <p>Our Modern Office</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievements Section -->
+      <section class="achievements">
+        <h2>Our Achievements</h2>
+        <div class="achievements-grid">
+          <div class="achievement-item" *ngFor="let achievement of achievements">
+            <h3>{{ achievement.number }}</h3>
+            <p>{{ achievement.label }}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission & Vision -->
+      <section class="mission-vision">
+        <div class="mv-grid">
+          <div class="mv-card">
+            <div class="mv-icon">🎯</div>
+            <h3>Our Mission</h3>
+            <p>
+              To empower businesses of all sizes with intelligent management solutions that simplify operations, 
+              increase productivity, and drive sustainable growth. We are committed to delivering exceptional 
+              value through innovative technology, outstanding customer service, and continuous improvement.
+            </p>
+          </div>
+          <div class="mv-card">
+            <div class="mv-icon">🔮</div>
+            <h3>Our Vision</h3>
+            <p>
+              To be the global leader in business management solutions, recognized for our innovation, 
+              reliability, and commitment to customer success. We envision a world where every business 
+              can operate at peak efficiency with our intelligent management systems, enabling them to 
+              focus on what they do best.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Company Values -->
+      <section class="values">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+          <div class="value-card" *ngFor="let value of values">
+            <div class="value-icon">{{ value.icon }}</div>
+            <h3>{{ value.title }}</h3>
+            <p>{{ value.description }}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="team">
+        <h2>Meet Our Leadership Team</h2>
+        <p class="team-intro">Our experienced leadership team brings together decades of expertise in technology, business management, and customer success.</p>
+        <div class="team-grid">
+          <div class="team-member" *ngFor="let member of teamMembers">
+            <div class="member-avatar">
+              <span>👤</span>
+            </div>
+            <div class="member-info">
+              <h3>{{ member.name }}</h3>
+              <h4>{{ member.position }}</h4>
+              <p class="experience">{{ member.experience }}</p>
+              <p class="description">{{ member.description }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section class="why-choose">
+        <h2>Why Choose 0Seven Management Services</h2>
+        <p class="section-subtitle">We combine expertise, innovation, and dedication to deliver solutions that transform your business operations</p>
+        <div class="reasons-grid">
+          <div class="reason-card" *ngFor="let reason of reasons">
+            <div class="reason-icon">{{ reason.icon }}</div>
+            <h3>{{ reason.title }}</h3>
+            <p>{{ reason.description }}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- History Timeline -->
+      <section class="history">
+        <h2>Our Journey</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2015</div>
+            <div class="timeline-content">
+              <h3>Company Founded</h3>
+              <p>0Seven Management Services was established with a vision to revolutionize business management systems.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2017</div>
+            <div class="timeline-content">
+              <h3>First 100 Clients</h3>
+              <p>Reached our first milestone of 100 satisfied clients across various industries.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2019</div>
+            <div class="timeline-content">
+              <h3>Cloud Platform Launch</h3>
+              <p>Launched our cloud-based platform, enabling scalable solutions for businesses of all sizes.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2021</div>
+            <div class="timeline-content">
+              <h3>500+ Implementations</h3>
+              <p>Successfully completed over 500 implementations with 99.9% client satisfaction rate.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-content">
+              <h3>AI Integration</h3>
+              <p>Integrated AI and machine learning capabilities to provide intelligent business insights.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="about-cta">
+        <h2>Ready to Partner with Us?</h2>
+        <p>Join hundreds of successful businesses that have transformed their operations with our management solutions.</p>
+        <div class="cta-buttons">
+          <a routerLink="/contact" class="btn btn-primary">Start Your Journey</a>
+          <a routerLink="/services" class="btn btn-outline">Explore Our Services</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
