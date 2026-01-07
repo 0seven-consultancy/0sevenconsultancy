@@ -1,0 +1,215 @@
+.features-page {
+  .hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+  }
+  
+  .features-grid {
+    padding: 80px 0;
+    
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+    
+    .feature-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-10px);
+      }
+      
+      .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+      
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #2d3748;
+      }
+      
+      p {
+        color: #718096;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      
+      .feature-list {
+        text-align: left;
+        list-style: none;
+        padding: 0;
+        
+        li {
+          padding: 8px 0;
+          color: #4a5568;
+          position: relative;
+          padding-left: 25px;
+          
+          &:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+  
+  .additional-features {
+    background: #f7fafc;
+    padding: 80px 0;
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+      text-align: center;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #2d3748;
+    }
+    
+    .capabilities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .capability {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      
+      h4 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        color: #2d3748;
+      }
+      
+      p {
+        color: #718096;
+        line-height: 1.6;
+      }
+    }
+  }
+  
+  .cta-section {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary, .btn-secondary {
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary {
+      background: white;
+      color: #3182ce;
+      
+      &:hover {
+        background: #f7fafc;
+        transform: translateY(-2px);
+      }
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      
+      &:hover {
+        background: white;
+        color: #3182ce;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .features-page {
+    .hero-section {
+      padding: 60px 0;
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+    
+    .features-grid .container {
+      grid-template-columns: 1fr;
+      padding: 0 20px;
+    }
+    
+    .additional-features {
+      .capabilities-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .cta-section {
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
