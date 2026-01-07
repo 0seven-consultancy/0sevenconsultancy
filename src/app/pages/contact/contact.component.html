@@ -1,4 +1,14 @@
 <div class="contact">
+  <!-- Thank You Popup -->
+  <div class="thank-you-popup" *ngIf="showThankYou" (click)="closeThankYou()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+      <div class="popup-icon">✅</div>
+      <h3>Thank You!</h3>
+      <p>Your message has been sent successfully. We'll get back to you within 24 hours.</p>
+      <button class="close-btn" (click)="closeThankYou()">Close</button>
+    </div>
+  </div>
+
   <div class="hero">
     <div class="container">
       <h1>Contact Us</h1>
@@ -13,7 +23,8 @@
         <div class="contact-form-section">
           <h2>Send us a Message</h2>
           <p class="form-intro">Fill out the form below and our team will get back to you within 24 hours.</p>
-          <form (ngSubmit)="onSubmit()" #contactFormRef="ngForm" class="contact-form">
+          <form (submit)="onSubmit($event)" class="contact-form">
+            <input type="hidden" name="access_key" value="799d043a-f7aa-47df-8de1-7ec39ef74f33">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Full Name *</label>
@@ -21,7 +32,6 @@
                   type="text" 
                   id="name" 
                   name="name"
-                  [(ngModel)]="contactForm.name"
                   required
                   placeholder="Your full name"
                 >
@@ -33,7 +43,6 @@
                   type="email" 
                   id="email" 
                   name="email"
-                  [(ngModel)]="contactForm.email"
                   required
                   placeholder="your.email@example.com"
                 >
@@ -47,7 +56,6 @@
                   type="tel" 
                   id="phone" 
                   name="phone"
-                  [(ngModel)]="contactForm.phone"
                   placeholder="+1 (555) 123-4567"
                 >
               </div>
@@ -58,7 +66,6 @@
                   type="text" 
                   id="company" 
                   name="company"
-                  [(ngModel)]="contactForm.company"
                   placeholder="Your company name"
                 >
               </div>
@@ -69,10 +76,14 @@
               <select 
                 id="service" 
                 name="service"
-                [(ngModel)]="contactForm.service"
               >
                 <option value="">Select a service</option>
-                <option *ngFor="let service of services" [value]="service">{{ service }}</option>
+                <option value="POS System">POS System</option>
+                <option value="Attendance Management System">Attendance Management System</option>
+                <option value="Hospital Management System">Hospital Management System</option>
+                <option value="Custom Software Development">Custom Software Development</option>
+                <option value="System Integration">System Integration</option>
+                <option value="General Inquiry">General Inquiry</option>
               </select>
             </div>
             
@@ -81,7 +92,6 @@
               <textarea 
                 id="message" 
                 name="message"
-                [(ngModel)]="contactForm.message"
                 required
                 rows="6"
                 placeholder="Tell us about your project, requirements, or any questions you have..."

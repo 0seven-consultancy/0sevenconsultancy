@@ -1,32 +1,18 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  contactForm = {
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    message: ''
-  };
+  showThankYou = false;
 
-  services = [
-    'POS System',
-    'Attendance Management System',
-    'Hospital Management System',
-    'Custom Software Development',
-    'System Integration',
-    'General Inquiry'
-  ];
+  constructor(private router: Router) {}
 
   faqs = [
     {
@@ -51,12 +37,27 @@ export class ContactComponent {
     }
   ];
 
-  onSubmit() {
-    if (this.contactForm.name && this.contactForm.email && this.contactForm.message) {
-      alert('Thank you for your message! We will get back to you within 24 hours.');
-      this.contactForm = { name: '', email: '', phone: '', company: '', service: '', message: '' };
-    } else {
-      alert('Please fill in all required fields (Name, Email, and Message).');
-    }
+  onSubmit(event: Event) {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Form submitted successfully:', data);
+      this.router.navigate(['/thank-you']);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Error submitting form. Please try again.');
+    });
+  }
+
+  closeThankYou() {
+    this.showThankYou = false;
   }
 }
