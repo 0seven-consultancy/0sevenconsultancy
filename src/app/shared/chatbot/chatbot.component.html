@@ -1,0 +1,63 @@
+<div class="chatbot-widget">
+  <!-- Chat Button -->
+  <button class="chat-button" (click)="toggleChat()" [class.active]="isOpen">
+    <svg *ngIf="!isOpen" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z" fill="currentColor"/>
+      <circle cx="7" cy="10" r="1" fill="currentColor"/>
+      <circle cx="12" cy="10" r="1" fill="currentColor"/>
+      <circle cx="17" cy="10" r="1" fill="currentColor"/>
+    </svg>
+    <svg *ngIf="isOpen" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/>
+    </svg>
+  </button>
+
+  <!-- Chat Window -->
+  <div class="chat-window" [class.open]="isOpen">
+    <div class="chat-header">
+      <h3>Quick Contact</h3>
+      <p>Get in touch with us!</p>
+    </div>
+
+    <div class="chat-content" *ngIf="!isSubmitted">
+      <form (submit)="onSubmit($event)" class="chat-form">
+        <input type="hidden" name="access_key" value="799d043a-f7aa-47df-8de1-7ec39ef74f33">
+        <input type="hidden" name="subject" value="Chatbot Inquiry">
+        
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        
+        <div class="form-group">
+          <input type="tel" name="phone" placeholder="Mobile Number" required>
+        </div>
+        
+        <div class="form-group">
+          <select name="service" required>
+            <option value="">Select Service</option>
+            <option value="POS System">POS System</option>
+            <option value="Attendance Management">Attendance Management</option>
+            <option value="Hospital Management">Hospital Management</option>
+            <option value="Custom Development">Custom Development</option>
+            <option value="General Inquiry">General Inquiry</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+
+    <div class="chat-content success-message" *ngIf="isSubmitted">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" fill="#48bb78"/>
+        <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h4>Thank You!</h4>
+      <p>Your message has been sent successfully. We'll contact you soon!</p>
+    </div>
+  </div>
+</div>
